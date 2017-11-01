@@ -13,7 +13,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include <stdint-gcc.h>
+#include <stdint.h>
 
 #include "FORB.h"
 
@@ -145,7 +145,7 @@ void FORB::toMat32F(const std::vector<TDescriptor> &descriptors,
     return;
   }
   
-  const size_t N = descriptors.size();
+  const uint32_t N = static_cast<uint32_t>(descriptors.size());
   
   mat.create(N, FORB::L*8, CV_32F);
   float *p = mat.ptr<float>();
@@ -174,7 +174,8 @@ void FORB::toMat32F(const std::vector<TDescriptor> &descriptors,
 void FORB::toMat8U(const std::vector<TDescriptor> &descriptors, 
   cv::Mat &mat)
 {
-  mat.create(descriptors.size(), 32, CV_8U);
+  const uint32_t N = static_cast<uint32_t>(descriptors.size());
+  mat.create(N, 32, CV_8U);
   
   unsigned char *p = mat.ptr<unsigned char>();
   

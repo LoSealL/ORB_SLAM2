@@ -11,11 +11,12 @@
 #define __D_T_SCORING_OBJECT__
 
 #include "BowVector.h"
+#include "../DUtils/DBoW2_API.h"
 
 namespace DBoW2 {
 
 /// Base class of scoring functions
-class GeneralScoring
+class DBOW2_API GeneralScoring
 {
 public:
   /**
@@ -51,7 +52,7 @@ public:
  * @param NORM type of norm to use when MUSTNORMALIZE
  */
 #define __SCORING_CLASS(NAME, MUSTNORMALIZE, NORM) \
-  NAME: public GeneralScoring \
+  DBOW2_API NAME: public GeneralScoring \
   { public: \
     /** \
      * Computes score between two vectors \

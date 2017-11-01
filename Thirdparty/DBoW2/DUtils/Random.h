@@ -15,10 +15,12 @@
 #include <cstdlib>
 #include <vector>
 
+#include "DBoW2_API.h"
+
 namespace DUtils {
 
 /// Functions to generate pseudo-random numbers
-class Random
+class DBOW2_API Random
 {
 public:
   class UnrepeatedRandomizer;
@@ -109,7 +111,7 @@ private:
 // ---------------------------------------------------------------------------
 
 /// Provides pseudo-random numbers with no repetitions
-class Random::UnrepeatedRandomizer
+class DBOW2_API Random::UnrepeatedRandomizer
 {
 public:
 
@@ -152,7 +154,7 @@ public:
    * Returns the number of values still to be returned
    * @return amount of values to return
    */
-  inline unsigned int left() const { return m_values.size(); }
+  inline size_t left() const { return m_values.size(); }
   
   /**
    * Resets the randomizer as it were just created

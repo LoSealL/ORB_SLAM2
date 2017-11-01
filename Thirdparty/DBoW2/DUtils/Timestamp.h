@@ -11,12 +11,13 @@
 #define __D_TIMESTAMP__
 
 #include <iostream>
+#include "DBoW2_API.h"
 using namespace std;
 
 namespace DUtils {
 
 /// Timestamp
-class Timestamp
+class DBOW2_API Timestamp
 {
 public:
 

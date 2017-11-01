@@ -1,0 +1,6 @@
+[submodule "Thirdparty/Pangolin"]
+	path = Thirdparty/Pangolin
+	url = https://github.com/stevenlovegrove/Pangolin.git
+[submodule "g2o"]
+	path = Thirdparty/g2o
+	url = https://github.com/LoSealL/g2o.git

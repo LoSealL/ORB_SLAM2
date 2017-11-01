@@ -15,11 +15,12 @@
 #include <string>
 
 #include "FClass.h"
+#include "../DUtils/DBoW2_API.h"
 
 namespace DBoW2 {
 
 /// Functions to manipulate ORB descriptors
-class FORB: protected FClass
+class DBOW2_API FORB: protected FClass
 {
 public:
 

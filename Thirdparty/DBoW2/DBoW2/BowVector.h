@@ -14,6 +14,8 @@
 #include <map>
 #include <vector>
 
+#include "../DUtils/DBoW2_API.h"
+
 namespace DBoW2 {
 
 /// Id of words
@@ -53,7 +55,7 @@ enum ScoringType
 };
 
 /// Vector of words to represent images
-class BowVector: 
+class DBOW2_API BowVector:
 	public std::map<WordId, WordValue>
 {
 public:
