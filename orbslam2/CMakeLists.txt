@@ -45,8 +45,6 @@ set(SRC
   Viewer.cc
 )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
-
 add_library(orbslam2 ${LIB_TYPE} ${API} ${SRC})
 
 target_link_libraries(orbslam2

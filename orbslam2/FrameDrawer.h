@@ -43,7 +43,9 @@ class ORB2_API FrameDrawer
 public:
     FrameDrawer(Map* pMap);
 
-    // Update info from the last processed frame.
+    /* Update info from the last processed frame.
+     * update MapPoint states
+     */ 
     void Update(Tracking *pTracker);
 
     // Draw last processed frame.

@@ -65,7 +65,10 @@ public:
     int SearchByBoW(KeyFrame *pKF, Frame &F, std::vector<MapPoint*> &vpMapPointMatches);
     int SearchByBoW(KeyFrame *pKF1, KeyFrame* pKF2, std::vector<MapPoint*> &vpMatches12);
 
-    // Matching for the Map Initialization (only used in the monocular case)
+    /** Matching for the Map Initialization (only used in the monocular case)
+     * Search matched key points between F1 and F2, using semi-brute-force hamming distance method
+     * \Note the keypoints in F1 looks up the keypoints in a patch with size windowSize of F2
+     */
     int SearchForInitialization(Frame &F1, Frame &F2, std::vector<cv::Point2f> &vbPrevMatched, std::vector<int> &vnMatches12, int windowSize=10);
 
     // Matching to triangulate new MapPoints. Check Epipolar Constraint.
@@ -95,6 +98,12 @@ protected:
 
     float RadiusByViewingCos(const float &viewCos);
 
+    /**
+     * Find the index of the largest three size of bins in histo.
+     * With diffrential among ind1, ind2 and ind3 less than 10%
+     * \Example:
+     * [21, 0, 1, 2, 80, 0] -> (4, 0, -1) beacuse 2 is less than 21*0.1
+     */
     void ComputeThreeMaxima(std::vector<int>* histo, const int L, int &ind1, int &ind2, int &ind3);
 
     float mfNNratio;
